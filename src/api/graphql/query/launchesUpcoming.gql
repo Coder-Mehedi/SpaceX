@@ -1,0 +1,19 @@
+query launchesUpcoming {
+  launchesUpcoming {
+    id
+    is_tentative
+    launch_date_local
+    launch_date_utc
+    launch_site {
+      site_name
+    }
+    launch_success
+    launch_year
+    mission_id
+    mission_name
+    rocket {
+      rocket_name
+      rocket_type
+    }
+  }
+}
