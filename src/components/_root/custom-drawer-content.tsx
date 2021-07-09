@@ -14,7 +14,12 @@ function CustomDrawerContent(
   return (
     <DrawerContentScrollView {...props}>
       <Image
-        style={{width: '100%', height: 200, marginBottom: 20}}
+        style={{
+          width: '100%',
+          height: 200,
+          marginBottom: 20,
+          bottom: 5,
+        }}
         source={{
           uri: 'https://cdn.dribbble.com/users/150724/screenshots/14693095/media/330f5914a7a017799a32d13fa07ff8fb.png',
         }}

@@ -7,9 +7,11 @@ import {View} from 'react-native';
 import TabView from 'components/_root/tab-view';
 import Card from 'components/_root/card';
 import {Colors} from 'utils/colors';
+import * as Progress from 'react-native-progress';
+import ProgressBar from 'components/_root/progress-bar';
 
 const Launches = () => {
-  const {data} = useQuery(launchesUpcoming);
+  const {data, loading} = useQuery(launchesUpcoming);
 
   const [routes] = React.useState([
     {key: 'first', title: 'Upcoming', icon: 'clock'},
@@ -26,12 +28,16 @@ const Launches = () => {
 
 export default Launches;
 const UpcomingLaunches = () => {
+  const {data, loading} = useQuery(launchesUpcoming);
   return (
-    <View style={{flex: 1}}>
-      <Card>
-        <Text style={{color: Colors.primaryText}}>Hi</Text>
-      </Card>
-    </View>
+    <>
+      <ProgressBar loading={loading} />
+      <View style={{flex: 1}}>
+        <Card>
+          <Text style={{color: Colors.primaryText}}>Hi</Text>
+        </Card>
+      </View>
+    </>
   );
 };
 
