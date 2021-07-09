@@ -1,7 +1,7 @@
 import {Colors} from './colors';
 
 export const navigatorHeaderOptions = {
-  headerTitleStyle: {color: Colors.primary, fontSize: 22},
-  headerTintColor: Colors.primary,
-  headerStyle: {backgroundColor: Colors.secondaryBackground},
+  headerTitleStyle: {color: Colors.primaryText, fontSize: 22},
+  headerTintColor: Colors.active,
+  headerStyle: {backgroundColor: Colors.background},
 };

@@ -1,0 +1,27 @@
+query company {
+  company {
+    valuation
+    test_sites
+    summary
+    name
+    ceo
+    cto
+    coo
+    cto_propulsion
+    employees
+    headquarters {
+      address
+      city
+      state
+    }
+    founder
+    launch_sites
+    links {
+      elon_twitter
+      flickr
+      twitter
+      website
+    }
+    vehicles
+  }
+}

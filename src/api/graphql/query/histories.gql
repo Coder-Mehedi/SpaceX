@@ -1,0 +1,13 @@
+query histories {
+  histories {
+    id
+    title
+    details
+    event_date_utc
+    links {
+      article
+      reddit
+      wikipedia
+    }
+  }
+}

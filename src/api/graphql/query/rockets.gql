@@ -1,0 +1,27 @@
+query rockets {
+  rockets {
+    active
+    boosters
+    company
+    cost_per_launch
+    country
+    description
+    engines {
+      number
+    }
+    height {
+      meters
+    }
+    id
+    landing_legs {
+      material
+      number
+    }
+    mass {
+      kg
+    }
+    name
+    type
+    wikipedia
+  }
+}

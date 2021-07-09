@@ -1,0 +1,16 @@
+query landpads {
+  landpads {
+    wikipedia
+    successful_landings
+    status
+    location {
+      name
+      region
+    }
+    landing_type
+    full_name
+    id
+    details
+    attempted_landings
+  }
+}

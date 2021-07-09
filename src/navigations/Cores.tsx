@@ -1,20 +1,19 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import Launches from 'screens/launches';
 import {Screen} from 'utils/screens';
 import {navigatorHeaderOptions} from 'utils/navigatorHeaderOptions';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-import {Colors} from 'utils/colors';
+import Cores from 'screens/cores';
 import MenuBar from 'components/_root/menu-bar';
+import {Colors} from 'utils/colors';
 
 const Stack = createStackNavigator();
 
-const LaunchesRoute = ({navigation}: any) => {
+const CoresRoute = ({navigation}: any) => {
   return (
     <Stack.Navigator screenOptions={navigatorHeaderOptions}>
       <Stack.Screen
-        name={Screen.Launches}
-        component={Launches}
+        name={Screen.Cores}
+        component={Cores}
         options={{
           headerLeft: () => <MenuBar />,
           cardStyle: {backgroundColor: Colors.background},
@@ -24,4 +23,4 @@ const LaunchesRoute = ({navigation}: any) => {
   );
 };
 
-export default LaunchesRoute;
+export default CoresRoute;
