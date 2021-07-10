@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 20,
     backgroundColor: Colors.cardBackground,
+    borderRadius: 5,
   },
 });
 

@@ -6,7 +6,15 @@ module.exports = {
       'module-resolver',
       {
         root: ['./src'],
-        extensions: ['.ts', '.tsx', '.ios.js', '.android.js', '.js', '.json'],
+        extensions: [
+          '.ts',
+          '.tsx',
+          '.ios.js',
+          '.android.js',
+          '.js',
+          '.json',
+          'gql',
+        ],
       },
     ],
     ['import-graphql'],

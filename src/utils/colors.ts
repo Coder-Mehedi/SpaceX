@@ -6,4 +6,5 @@ export const Colors = {
   primaryText: '#fbfbfe',
   bar: '#fbfbfe',
   cardBackground: '#393E46',
+  buttonBackground: '#FFC107',
 };
