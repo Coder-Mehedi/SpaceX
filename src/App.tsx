@@ -11,6 +11,8 @@ import {Screen} from 'utils/screens';
 import CoresRoute from 'navigations/Cores';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import CompanyRoute from 'navigations/Company';
+import HistoryRoute from 'navigations/History';
 
 const Drawer = createDrawerNavigator();
 
@@ -56,7 +58,7 @@ function App() {
           />
           <Drawer.Screen
             name={Screen.Company}
-            component={CoresRoute}
+            component={CompanyRoute}
             options={{
               drawerIcon: () => (
                 <Icon name="xing" color={Colors.active} size={20} />
@@ -65,7 +67,7 @@ function App() {
           />
           <Drawer.Screen
             name={Screen.History}
-            component={CoresRoute}
+            component={HistoryRoute}
             options={{
               drawerIcon: () => (
                 <Icon name="history" color={Colors.active} size={20} />

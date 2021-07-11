@@ -4,9 +4,13 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Colors} from 'utils/colors';
 import dateFormat from 'dateformat';
+import {useNavigation} from '@react-navigation/native';
+import {Screen} from 'utils/screens';
+import {CommonActions} from '@react-navigation/native';
 
-const LaunchesCard = ({launch}: any) => {
-  console.log(launch);
+const LaunchesCard = ({launch, route}: any) => {
+  const navigation = useNavigation();
+
   return (
     <View style={{flex: 1}}>
       <Card>
@@ -29,7 +33,11 @@ const LaunchesCard = ({launch}: any) => {
 
           <Button
             title="Rocket Specs"
-            onPress={() => console.log('pressed')}
+            onPress={() => {
+              navigation.navigate(Screen.RocketDetails, {
+                rocketId: launch.rocket.rocket.id,
+              });
+            }}
             icon="rocket"
           />
         </View>

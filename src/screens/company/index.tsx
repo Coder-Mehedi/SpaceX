@@ -2,10 +2,10 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Colors} from 'utils/colors';
 
-const Cores = () => {
+const Company = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Cores</Text>
+      <Text style={styles.text}>About Company</Text>
     </View>
   );
 };
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
     color: Colors.primaryText,
   },
 });
-export default Cores;
+export default Company;

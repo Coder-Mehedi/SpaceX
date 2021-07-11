@@ -2,8 +2,8 @@ export enum Screen {
   Launches = 'Launches',
   Vehicles = 'Vehicles',
   Ships = 'Ships',
-  Histories = 'Histories',
   Cores = 'Cores',
-  Company = 'About Company',
+  Company = 'Company',
   History = 'History',
+  RocketDetails = 'Rocket Details',
 }
