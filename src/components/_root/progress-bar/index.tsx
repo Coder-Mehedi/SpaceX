@@ -5,7 +5,7 @@ import {Colors} from 'utils/colors';
 const ProgressBar = () => {
   return (
     <Progress.Bar
-      style={{width: '100%'}}
+      style={{width: '100%', marginTop: 5}}
       height={3}
       indeterminateAnimationDuration={2000}
       indeterminate
