@@ -6,9 +6,8 @@ import {Colors} from 'utils/colors';
 import dateFormat from 'dateformat';
 import {useNavigation} from '@react-navigation/native';
 import {Screen} from 'utils/screens';
-import {CommonActions} from '@react-navigation/native';
 
-const LaunchesCard = ({launch, route}: any) => {
+const LaunchDetailsCard = ({launch, route}: any) => {
   const navigation = useNavigation();
 
   return (
@@ -70,4 +69,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LaunchesCard;
+export default LaunchDetailsCard;

@@ -7,7 +7,7 @@ import TabView from 'components/_root/tab-view';
 import {Colors} from 'utils/colors';
 import ProgressBar from 'components/_root/progress-bar';
 import Button from 'components/_root/button';
-import LaunchesCard from 'components/launches-card';
+import LaunchDetailsCard from 'components/launch-details-card';
 import {FlatList} from 'react-native-gesture-handler';
 import {useLaunches} from 'components/_context/launchesContext';
 
@@ -30,7 +30,7 @@ const UpcomingLaunches = () => {
   const {launchNext, launchNextLoading} = useLaunches();
 
   if (launchNextLoading) return <ProgressBar />;
-  return <LaunchesCard launch={launchNext} />;
+  return <LaunchDetailsCard launch={launchNext} />;
 };
 
 const CompletedLaunches = () => <View style={{flex: 1}} />;
