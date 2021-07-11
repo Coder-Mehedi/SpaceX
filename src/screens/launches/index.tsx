@@ -1,6 +1,4 @@
-import {useQuery} from '@apollo/client';
 import React from 'react';
-
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {View} from 'react-native';
 import TabView from 'components/_root/tab-view';
@@ -10,6 +8,8 @@ import Button from 'components/_root/button';
 import LaunchDetailsCard from 'components/launch-details-card';
 import {FlatList} from 'react-native-gesture-handler';
 import {useLaunches} from 'components/_context/launchesContext';
+import LaunchCard from 'components/launch-card';
+import {ILaunch} from 'utils/interfaces';
 
 const Launches = () => {
   const [routes] = React.useState([
@@ -33,4 +33,21 @@ const UpcomingLaunches = () => {
   return <LaunchDetailsCard launch={launchNext} />;
 };
 
-const CompletedLaunches = () => <View style={{flex: 1}} />;
+const CompletedLaunches = () => {
+  const {launchesPast, launchesPastLoading, fetchMorePast} = useLaunches();
+  if (launchesPastLoading) return <ProgressBar />;
+
+  return (
+    <View>
+      <FlatList
+        onEndReached={() =>
+          fetchMorePast({variables: {offset: launchesPast?.length}})
+        }
+        data={launchesPast}
+        renderItem={({item: launch}: {item: ILaunch}) => (
+          <LaunchCard launch={launch} />
+        )}
+      />
+    </View>
+  );
+};

@@ -10,6 +10,7 @@ import {LaunchesProvider} from 'components/_context/launchesContext';
 import Vehicles from 'screens/vehicles';
 import {RocketProvider} from 'components/_context/rocketContext';
 import RocketDetails from 'screens/rocket-details';
+import LaunchDetailsCard from 'components/launch-details-card';
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,13 @@ const LaunchesRoute = ({navigation}: any) => {
           <Stack.Screen
             name={Screen.RocketDetails}
             component={RocketDetails}
+            options={{
+              cardStyle: {backgroundColor: Colors.background},
+            }}
+          />
+          <Stack.Screen
+            name={Screen.LaunchDetails}
+            component={LaunchDetailsCard}
             options={{
               cardStyle: {backgroundColor: Colors.background},
             }}

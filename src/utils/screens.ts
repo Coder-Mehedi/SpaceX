@@ -6,4 +6,5 @@ export enum Screen {
   Company = 'Company',
   History = 'History',
   RocketDetails = 'Rocket Details',
+  LaunchDetails = 'Launch Details',
 }

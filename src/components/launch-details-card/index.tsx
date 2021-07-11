@@ -9,39 +9,40 @@ import {Screen} from 'utils/screens';
 
 const LaunchDetailsCard = ({launch, route}: any) => {
   const navigation = useNavigation();
+  if (!launch) launch = route.params.launch;
+  console.log('launch', launch);
+  // return <Text>Launch</Text>;
 
   return (
-    <View style={{flex: 1}}>
-      <Card>
-        <View>
-          <Text style={styles.siteName}>{launch.launch_site.site_name}</Text>
-          <Text style={styles.missionName}>{launch.mission_name}</Text>
-          <Text style={styles.launchDate}>
-            {dateFormat(launch.launch_date_utc, 'd mmmm, yyyy, h:MM:ss TT')}
+    <Card>
+      <View>
+        <Text style={styles.siteName}>{launch.launch_site.site_name}</Text>
+        <Text style={styles.missionName}>{launch.mission_name}</Text>
+        <Text style={styles.launchDate}>
+          {dateFormat(launch.launch_date_utc, 'd mmmm, yyyy, h:MM:ss TT')}
+        </Text>
+        {launch.static_fire_date_utc && (
+          <Text style={styles.staticFireDate}>
+            {dateFormat(
+              launch.static_fire_date_utc,
+              'd mmmm, yyyy, h:MM:ss TT',
+            )}{' '}
+            (static fire)
           </Text>
-          {launch.static_fire_date_utc && (
-            <Text style={styles.staticFireDate}>
-              {dateFormat(
-                launch.static_fire_date_utc,
-                'd mmmm, yyyy, h:MM:ss TT',
-              )}{' '}
-              (static fire)
-            </Text>
-          )}
-          <Text style={styles.details}>{launch.details}</Text>
+        )}
+        <Text style={styles.details}>{launch.details}</Text>
 
-          <Button
-            title="Rocket Specs"
-            onPress={() => {
-              navigation.navigate(Screen.RocketDetails, {
-                rocketId: launch.rocket.rocket.id,
-              });
-            }}
-            icon="rocket"
-          />
-        </View>
-      </Card>
-    </View>
+        <Button
+          title="Rocket Specs"
+          onPress={() => {
+            navigation.navigate(Screen.RocketDetails, {
+              rocketId: launch.rocket.rocket.id,
+            });
+          }}
+          icon="rocket"
+        />
+      </View>
+    </Card>
   );
 };
 const styles = StyleSheet.create({

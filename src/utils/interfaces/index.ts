@@ -14,3 +14,37 @@ export interface IRocket {
   height: {feet: number; meters: number};
   mass: {kg: number; lb: number};
 }
+
+export interface ILaunch {
+  __typename: string;
+  id: string;
+  details: string;
+  is_tentative: boolean;
+  launch_date_utc: string;
+  launch_site: {
+    __typename: string;
+    site_id: string;
+    site_name: string;
+    site_name_long: string;
+  };
+  launch_success: boolean;
+  launch_year: string;
+  mission_id: string[];
+  mission_name: string;
+  static_fire_date_utc: null | string;
+  telemetry: {flight_club: any};
+  tentative_max_precision: string;
+  rocket: {rocket_name: string; rocket_type: string};
+  links: {
+    article_link: string;
+    mission_patch_small: string;
+    mission_patch: string;
+    presskit: null;
+    reddit_campaign: string;
+    reddit_launch: string;
+    reddit_media: string;
+    reddit_recovery: null;
+    video_link: string;
+    wikipedia: string;
+  };
+}
