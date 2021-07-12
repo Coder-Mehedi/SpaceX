@@ -8,7 +8,7 @@ import {
 } from '@react-navigation/drawer';
 import {Image} from 'react-native';
 
-function CustomDrawerContent(
+function CustomDrawer(
   props: DrawerContentComponentProps<DrawerContentOptions>,
 ) {
   return (
@@ -29,4 +29,4 @@ function CustomDrawerContent(
   );
 }
 
-export default CustomDrawerContent;
+export default CustomDrawer;

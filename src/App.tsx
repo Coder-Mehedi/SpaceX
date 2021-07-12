@@ -4,12 +4,11 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {ApolloProvider} from '@apollo/client';
 import {client} from 'config/apollo';
 import LaunchesRoute from 'navigations/Launches';
-import CustomDrawerContent from 'components/_root/custom-drawer-content';
 import VehiclesRoute from 'navigations/Vehicles';
 import {Colors} from 'utils/colors';
 import {Screen} from 'utils/screens';
 import CoresRoute from 'navigations/Cores';
-
+import CustomDrawer from 'components/_root/custom-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import CompanyRoute from 'navigations/Company';
 import HistoryRoute from 'navigations/History';
@@ -21,7 +20,7 @@ function App() {
     <ApolloProvider client={client}>
       <NavigationContainer>
         <Drawer.Navigator
-          drawerContent={props => <CustomDrawerContent {...props} />}
+          drawerContent={props => <CustomDrawer {...props} />}
           drawerStyle={{
             backgroundColor: Colors.background,
           }}

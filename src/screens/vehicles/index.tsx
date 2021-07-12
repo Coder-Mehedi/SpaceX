@@ -9,11 +9,12 @@ import {useRocket} from 'components/_context/rocketContext';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {useVehicle} from 'components/_context/vehicleContext';
 import {FlatList} from 'react-native-gesture-handler';
-import {IRocket} from 'utils/interfaces';
+// import {ICapsule, IRocket} from 'utils/interfaces';
 import Card from 'components/_root/card';
 import Text from 'components/_root/text';
 import Accordion from 'components/_root/accordion';
 import RocketsAccordion from 'components/rockets-accordion';
+import ProgressBar from 'components/_root/progress-bar';
 
 const Vehicles = ({route}: any) => {
   const [routes] = React.useState([
@@ -34,12 +35,12 @@ const Vehicles = ({route}: any) => {
 export default Vehicles;
 const Rockets = () => {
   const {rockets, rocketsLoading} = useVehicle();
-  if (rockets) console.log('rockets', rockets);
+  if (rocketsLoading) return <ProgressBar />;
   return (
     <View style={{flex: 1}}>
       <FlatList
         data={rockets}
-        renderItem={({item: rocket}: {item: IRocket}) => (
+        renderItem={({item: rocket}: {item: any}) => (
           <RocketsAccordion rocket={rocket} />
         )}
       />
@@ -47,6 +48,19 @@ const Rockets = () => {
   );
 };
 
-const Capsules = () => <View style={{flex: 1}} />;
+const Capsules = () => {
+  // const {capsules, capsulesLoading} = useVehicle();
+  return <View style={{flex: 1}} />;
+  // return (
+  //   <View style={{flex: 1}}>
+  //     <FlatList
+  //       data={capsules}
+  //       renderItem={({item: capsule}: {item: ICapsule}) => (
+  //         <Text>{capsule.original_launch}</Text>
+  //       )}
+  //     />
+  //   </View>
+  // );
+};
 
 const Ships = () => <View style={{flex: 1}} />;

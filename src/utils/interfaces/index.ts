@@ -48,3 +48,25 @@ export interface ILaunch {
     wikipedia: string;
   };
 }
+
+export interface ICapsule {
+  id: string;
+  landings: number;
+  missions: [
+    {
+      flight: number;
+      name: string;
+    },
+  ];
+  original_launch: string;
+  reuse_count: number;
+  status: string;
+  type: string;
+  dragon: {
+    type: string;
+    id: string;
+    active: boolean;
+    description: string;
+    name: string;
+  };
+}
