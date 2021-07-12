@@ -6,11 +6,9 @@ query rockets {
     cost_per_launch
     country
     description
-    engines {
-      number
-    }
     height {
       meters
+      feet
     }
     id
     landing_legs {
@@ -19,9 +17,17 @@ query rockets {
     }
     mass {
       kg
+      lb
     }
     name
     type
     wikipedia
+    stages
+    success_rate_pct
+    first_flight
+    diameter {
+      feet
+      meters
+    }
   }
 }

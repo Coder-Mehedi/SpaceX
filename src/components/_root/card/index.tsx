@@ -1,9 +1,19 @@
 import React, {ReactChild} from 'react';
-import {ImageBackground, StyleSheet, View} from 'react-native';
+import {
+  ImageBackground,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
 import {Colors} from 'utils/colors';
+interface CardProps {
+  children: ReactChild;
+  style?: StyleProp<ViewStyle>;
+}
 
-const Card = ({children}: {children: ReactChild}) => {
-  return <View style={styles.card}>{children}</View>;
+const Card = ({children, style}: CardProps) => {
+  return <View style={[styles.card, style]}>{children}</View>;
 };
 
 const styles = StyleSheet.create({

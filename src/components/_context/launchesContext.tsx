@@ -21,7 +21,6 @@ const LaunchesContext = createContext<{
 
 function LaunchesProvider({children}: any) {
   const route = useRoute();
-  console.log('route', route.params);
   const {data: launchNextData, loading: launchNextLoading} = useQuery(
     launchNext,
     {onError: err => console.log(err)},

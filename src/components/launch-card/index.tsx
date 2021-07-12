@@ -1,9 +1,10 @@
 import {useNavigation} from '@react-navigation/native';
 import Button from 'components/_root/button';
 import Card from 'components/_root/card';
+import Text from 'components/_root/text';
 import dateFormat from 'dateformat';
 import React from 'react';
-import {StyleSheet, Text, View, Linking, Pressable} from 'react-native';
+import {StyleSheet, View, Linking, Pressable} from 'react-native';
 import {Colors} from 'utils/colors';
 import {ILaunch} from 'utils/interfaces';
 import {Screen} from 'utils/screens';
@@ -17,18 +18,22 @@ const LaunchCard = ({launch}: {launch: ILaunch}) => {
       }}>
       <Card>
         <View>
-          <Text style={styles.siteName}>F-NR {launch?.id}</Text>
-          <Text style={styles.missionName}>{launch?.mission_name}</Text>
-          <Text style={styles.launchDate}>
+          <Text>
+            <>F-NR {launch?.id}</>
+          </Text>
+          <Text.Primary>{launch?.mission_name}</Text.Primary>
+          <Text>
             {dateFormat(launch?.launch_date_utc, 'd mmmm, yyyy, h:MM:ss TT')}
           </Text>
           {launch?.static_fire_date_utc && (
-            <Text style={styles.staticFireDate}>
-              {dateFormat(
-                launch.static_fire_date_utc,
-                'd mmmm, yyyy, h:MM:ss TT',
-              )}{' '}
-              (static fire)
+            <Text>
+              <>
+                {dateFormat(
+                  launch.static_fire_date_utc,
+                  'd mmmm, yyyy, h:MM:ss TT',
+                )}{' '}
+                <Text.Secondary>(static fire)</Text.Secondary>
+              </>
             </Text>
           )}
 
@@ -44,29 +49,5 @@ const LaunchCard = ({launch}: {launch: ILaunch}) => {
     </Pressable>
   );
 };
-const styles = StyleSheet.create({
-  siteName: {
-    color: Colors.secondaryText,
-    fontSize: 16,
-  },
-  missionName: {
-    color: Colors.primaryText,
-    fontSize: 26,
-  },
-  launchDate: {
-    color: Colors.secondaryText,
-    fontSize: 16,
-  },
-  staticFireDate: {
-    color: Colors.secondaryText,
-    fontSize: 16,
-  },
-  details: {
-    color: Colors.primaryText,
-    fontSize: 16,
-    paddingVertical: 10,
-    letterSpacing: 1,
-  },
-});
 
 export default LaunchCard;
