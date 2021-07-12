@@ -1,15 +1,23 @@
-import React, {useState} from 'react';
+import React, {ReactNode, useState} from 'react';
 import {
   View,
   TouchableOpacity,
   StyleSheet,
   LayoutAnimation,
+  ViewStyle,
+  StyleProp,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Colors} from 'utils/colors';
 import Text from 'components/_root/text';
 
-const Accordion = ({data, title}: any) => {
+interface Props {
+  children: ReactNode;
+  title: string;
+  style?: StyleProp<ViewStyle>;
+}
+
+const Accordion = ({children, title, style}: Props) => {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -18,7 +26,7 @@ const Accordion = ({data, title}: any) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <TouchableOpacity style={styles.row} onPress={toggleExpand}>
         <Text.Primary>{title}</Text.Primary>
         <Icon
@@ -28,11 +36,7 @@ const Accordion = ({data, title}: any) => {
         />
       </TouchableOpacity>
       <View style={styles.parentHr} />
-      {expanded && (
-        <View style={styles.data}>
-          <Text>{data}</Text>
-        </View>
-      )}
+      {expanded && <View style={styles.data}>{children}</View>}
     </View>
   );
 };

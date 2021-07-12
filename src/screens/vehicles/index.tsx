@@ -13,6 +13,7 @@ import {IRocket} from 'utils/interfaces';
 import Card from 'components/_root/card';
 import Text from 'components/_root/text';
 import Accordion from 'components/_root/accordion';
+import RocketsAccordion from 'components/rockets-accordion';
 
 const Vehicles = ({route}: any) => {
   const [routes] = React.useState([
@@ -39,9 +40,7 @@ const Rockets = () => {
       <FlatList
         data={rockets}
         renderItem={({item: rocket}: {item: IRocket}) => (
-          <Card>
-            <Accordion data={rocket.description} title={rocket.name} />
-          </Card>
+          <RocketsAccordion rocket={rocket} />
         )}
       />
     </View>
