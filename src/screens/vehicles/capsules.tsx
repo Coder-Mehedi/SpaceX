@@ -10,9 +10,9 @@ import {ICapsule} from 'utils/interfaces';
 
 const Capsules = () => {
   const {capsules, capsulesLoading, fetchMoreVehicles} = useVehicle();
-  // return <View style={{flex: 1}} />;
-  console.log('capsulesLoading', capsulesLoading);
+
   if (capsulesLoading) return <ProgressBar />;
+
   return (
     <View style={{flex: 1}}>
       <FlatList

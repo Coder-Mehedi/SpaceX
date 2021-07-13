@@ -49,15 +49,15 @@ export interface ILaunch {
   };
 }
 
+export interface IMission {
+  flight: number;
+  name: string;
+}
+
 export interface ICapsule {
   id: string;
   landings: number;
-  missions: [
-    {
-      flight: number;
-      name: string;
-    },
-  ];
+  missions: IMission[];
   original_launch: string;
   reuse_count: number;
   status: string;
@@ -69,4 +69,33 @@ export interface ICapsule {
     description: string;
     name: string;
   };
+}
+
+export interface IShip {
+  abs: number;
+  active: true;
+  attempted_landings: null;
+  class: number;
+  course_deg: null;
+  home_port: string;
+  id: string;
+  image: string;
+  imo: number;
+  model: null;
+  name: string;
+  position: {
+    latitude: null;
+    longitude: null;
+  };
+  roles: string[];
+  speed_kn: null;
+  status: string;
+  type: string;
+  url: string;
+  successful_landings: null;
+  weight_kg: number;
+  weight_lbs: number;
+  year_built: number;
+  missions: string[];
+  mmsi: number;
 }

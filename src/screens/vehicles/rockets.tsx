@@ -3,6 +3,7 @@ import {useVehicle} from 'components/_context/vehicleContext';
 import ProgressBar from 'components/_root/progress-bar';
 import React from 'react';
 import {View, FlatList} from 'react-native';
+import {IRocket} from 'utils/interfaces';
 
 const Rockets = () => {
   const {rockets, rocketsLoading} = useVehicle();
@@ -11,7 +12,7 @@ const Rockets = () => {
     <View style={{flex: 1}}>
       <FlatList
         data={rockets}
-        renderItem={({item: rocket}: {item: any}) => (
+        renderItem={({item: rocket}: {item: IRocket}) => (
           <RocketsAccordion rocket={rocket} />
         )}
       />

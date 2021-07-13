@@ -9,6 +9,7 @@ const cache = new InMemoryCache({
       fields: {
         launchesPast: offsetLimitPagination(),
         capsules: offsetLimitPagination(),
+        ships: offsetLimitPagination(),
       },
     },
   },
