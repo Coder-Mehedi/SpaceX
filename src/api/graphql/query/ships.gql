@@ -1,5 +1,5 @@
-query ships {
-  ships {
+query ships($limit: Int, $offset: Int) {
+  ships(limit: $limit, offset: $offset) {
     image
     model
     name

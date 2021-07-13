@@ -6,6 +6,7 @@ import dateFormat from 'dateformat';
 import React from 'react';
 import {StyleSheet, View, Linking, Pressable} from 'react-native';
 import {Colors} from 'utils/colors';
+import formatDate from 'utils/formatDate';
 import {ILaunch} from 'utils/interfaces';
 import {Screen} from 'utils/screens';
 
@@ -22,9 +23,7 @@ const LaunchCard = ({launch}: {launch: ILaunch}) => {
             <>F-NR {launch?.id}</>
           </Text>
           <Text.Primary>{launch?.mission_name}</Text.Primary>
-          <Text>
-            {dateFormat(launch?.launch_date_utc, 'd mmmm, yyyy, h:MM:ss TT')}
-          </Text>
+          <Text>{formatDate(launch?.launch_date_utc)}</Text>
           {launch?.static_fire_date_utc && (
             <Text>
               <>

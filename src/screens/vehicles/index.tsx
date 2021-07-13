@@ -16,6 +16,9 @@ import Accordion from 'components/_root/accordion';
 import RocketsAccordion from 'components/rockets-accordion';
 import ProgressBar from 'components/_root/progress-bar';
 
+import Capsules from 'screens/vehicles/capsules';
+import Rockets from 'screens/vehicles/rockets';
+
 const Vehicles = ({route}: any) => {
   const [routes] = React.useState([
     {key: 'first', title: 'Rockets', icon: 'rocket'},
@@ -33,34 +36,5 @@ const Vehicles = ({route}: any) => {
 };
 
 export default Vehicles;
-const Rockets = () => {
-  const {rockets, rocketsLoading} = useVehicle();
-  if (rocketsLoading) return <ProgressBar />;
-  return (
-    <View style={{flex: 1}}>
-      <FlatList
-        data={rockets}
-        renderItem={({item: rocket}: {item: any}) => (
-          <RocketsAccordion rocket={rocket} />
-        )}
-      />
-    </View>
-  );
-};
-
-const Capsules = () => {
-  // const {capsules, capsulesLoading} = useVehicle();
-  return <View style={{flex: 1}} />;
-  // return (
-  //   <View style={{flex: 1}}>
-  //     <FlatList
-  //       data={capsules}
-  //       renderItem={({item: capsule}: {item: ICapsule}) => (
-  //         <Text>{capsule.original_launch}</Text>
-  //       )}
-  //     />
-  //   </View>
-  // );
-};
 
 const Ships = () => <View style={{flex: 1}} />;

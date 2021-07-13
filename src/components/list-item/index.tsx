@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Colors} from 'utils/colors';
 
-const ListItem = ({label, value}: {label: string; value: string}) => {
+const ListItem = ({label, value}: {label: string; value: string | number}) => {
   return (
     <View style={styles.listContainer}>
       <Text style={styles.text}>{label}</Text>
