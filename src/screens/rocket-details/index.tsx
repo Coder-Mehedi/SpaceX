@@ -4,6 +4,7 @@ import ProgressBar from 'components/_root/progress-bar';
 import React, {useEffect} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {Colors} from 'utils/colors';
+import {setRocketImage} from 'utils/setRocketImage';
 
 const RocketDetails = ({navigation, route}: any) => {
   const {rocket, rocketLoading, setRocketId} = useRocket();
@@ -27,9 +28,7 @@ const RocketDetails = ({navigation, route}: any) => {
     <View style={styles.container}>
       <Image
         style={styles.rocketImage}
-        source={{
-          uri: 'https://cdnuploads.aa.com.tr/uploads/Contents/2020/05/30/thumbs_b_c_a4a6996640e91d4ff86a71f5d9d9f84b.jpg?v=225920',
-        }}
+        source={setRocketImage(rocket?.name as string)}
       />
       <Text style={styles.name}>{rocket?.name}</Text>
       <Text style={styles.description}>{rocket?.description}</Text>
