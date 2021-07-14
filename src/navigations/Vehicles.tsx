@@ -6,14 +6,12 @@ import Vehicles from 'screens/vehicles';
 import MenuBar from 'components/_root/menu-bar';
 import {Colors} from 'utils/colors';
 import {RocketProvider} from 'components/_context/rocketContext';
-import Launches from 'screens/launches';
-import {LaunchesProvider} from 'components/_context/launchesContext';
 import {VehicleProvider} from 'components/_context/vehicleContext';
 import RocketDetails from 'screens/rocket-details';
 
 const Stack = createStackNavigator();
 
-const VehiclesRoute = ({navigation}: any) => {
+const VehiclesRoute = () => {
   return (
     <RocketProvider>
       <VehicleProvider>

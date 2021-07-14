@@ -1,7 +1,6 @@
 import {useQuery} from '@apollo/client';
-import React, {createContext, useContext, useState} from 'react';
+import React, {createContext, useContext} from 'react';
 import GET_COMPANY_INFO from 'api/graphql/query/company.gql';
-import {useNavigation, useRoute} from '@react-navigation/native';
 import {ICompany} from 'utils/interfaces';
 
 const CompanyInfoContext = createContext<{

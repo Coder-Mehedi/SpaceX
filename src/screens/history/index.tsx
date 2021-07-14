@@ -1,9 +1,8 @@
 import React from 'react';
-import {Image, Linking, StyleSheet, View} from 'react-native';
+import {Linking, StyleSheet, View} from 'react-native';
 import {Colors} from 'utils/colors';
 import Timeline from 'react-native-timeline-flatlist';
 import {useHistory} from 'components/_context/historyProvider';
-
 import formatDate from 'utils/formatDate';
 import ProgressBar from 'components/_root/progress-bar';
 import Text from 'components/_root/text';
@@ -51,7 +50,7 @@ const History = () => {
         circleSize={20}
         circleColor={Colors.active}
         lineColor={Colors.active}
-        timeContainerStyle={{minWidth: 52, marginTop: -5}}
+        timeContainerStyle={{minWidth: 52}}
         timeStyle={{
           textAlign: 'center',
           color: Colors.primaryText,
@@ -69,16 +68,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 15,
-    // justifyContent: 'center',
-    // alignItems: 'center',
   },
   title: {
     fontSize: 22,
     paddingBottom: 5,
-  },
-
-  text: {
-    color: Colors.primaryText,
   },
 });
 export default History;

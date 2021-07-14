@@ -7,7 +7,6 @@ import LaunchesRoute from 'navigations/Launches';
 import VehiclesRoute from 'navigations/Vehicles';
 import {Colors} from 'utils/colors';
 import {Screen} from 'utils/screens';
-import CoresRoute from 'navigations/Cores';
 import CustomDrawer from 'components/_root/custom-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import CompanyRoute from 'navigations/Company';
@@ -46,15 +45,7 @@ function App() {
               ),
             }}
           />
-          <Drawer.Screen
-            name={Screen.Cores}
-            component={CoresRoute}
-            options={{
-              drawerIcon: () => (
-                <Icon name="dot-circle" color={Colors.active} size={20} />
-              ),
-            }}
-          />
+
           <Drawer.Screen
             name={Screen.Company}
             component={CompanyRoute}

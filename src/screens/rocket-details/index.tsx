@@ -6,7 +6,7 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import {Colors} from 'utils/colors';
 import {setRocketImage} from 'utils/setRocketImage';
 
-const RocketDetails = ({navigation, route}: any) => {
+const RocketDetails = ({route}: any) => {
   const {rocket, rocketLoading, setRocketId} = useRocket();
 
   useEffect(() => {

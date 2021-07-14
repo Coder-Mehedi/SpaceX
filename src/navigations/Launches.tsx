@@ -3,18 +3,16 @@ import React from 'react';
 import Launches from 'screens/launches';
 import {Screen} from 'utils/screens';
 import {navigatorHeaderOptions} from 'utils/navigatorHeaderOptions';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import {Colors} from 'utils/colors';
 import MenuBar from 'components/_root/menu-bar';
 import {LaunchesProvider} from 'components/_context/launchesContext';
-import Vehicles from 'screens/vehicles';
 import {RocketProvider} from 'components/_context/rocketContext';
 import RocketDetails from 'screens/rocket-details';
 import LaunchDetailsCard from 'components/launch-details-card';
 
 const Stack = createStackNavigator();
 
-const LaunchesRoute = ({navigation}: any) => {
+const LaunchesRoute = () => {
   return (
     <LaunchesProvider>
       <RocketProvider>

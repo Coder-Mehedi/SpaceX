@@ -4,12 +4,12 @@ import Capsules from 'screens/vehicles/capsules';
 import Rockets from 'screens/vehicles/rockets';
 import Ships from 'screens/vehicles/ships';
 
-const Vehicles = ({route}: any) => {
-  const [routes] = React.useState([
+const Vehicles = () => {
+  const routes = [
     {key: 'first', title: 'Rockets', icon: 'rocket'},
     {key: 'second', title: 'Capsules', icon: 'paper-plane'},
     {key: 'third', title: 'Ships', icon: 'ship'},
-  ]);
+  ];
 
   const renderScene = {
     first: Rockets,

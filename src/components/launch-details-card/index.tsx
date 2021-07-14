@@ -2,7 +2,6 @@ import Button from 'components/_root/button';
 import Card from 'components/_root/card';
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Colors} from 'utils/colors';
 import dateFormat from 'dateformat';
 import {useNavigation} from '@react-navigation/native';
 import {Screen} from 'utils/screens';

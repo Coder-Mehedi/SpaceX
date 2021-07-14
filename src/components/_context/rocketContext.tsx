@@ -1,7 +1,6 @@
 import {useQuery} from '@apollo/client';
 import React, {createContext, useContext, useState} from 'react';
 import GET_ROCKET from 'api/graphql/query/rocket.gql';
-import {useNavigation, useRoute} from '@react-navigation/native';
 import {IRocket} from 'utils/interfaces';
 
 const RocketContext = createContext<{

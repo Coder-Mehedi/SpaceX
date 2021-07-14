@@ -5,7 +5,6 @@ import Text from 'components/_root/text';
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
-import {Colors} from 'utils/colors';
 
 const Company = () => {
   const {company, companyLoading} = useCompanyInfo();
