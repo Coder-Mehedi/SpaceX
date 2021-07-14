@@ -1,4 +1,4 @@
-import React, {ReactChild} from 'react';
+import React, {ReactNode} from 'react';
 import {
   StyleProp,
   StyleSheet,
@@ -8,7 +8,7 @@ import {
 import {Colors} from 'utils/colors';
 
 interface TextProps {
-  children: ReactChild;
+  children: ReactNode;
   style?: StyleProp<TextStyle>;
 }
 
