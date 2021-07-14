@@ -22,9 +22,10 @@ const Ships = () => {
               source={{uri: ship.image}}
               style={{width: '100%', height: 200}}
             />
-            <Text>{ship.id}</Text>
+            <Text.Secondary style={{paddingTop: 15}}>
+              {ship.type}
+            </Text.Secondary>
             <Text.Primary>{ship.name}</Text.Primary>
-            <Text>{ship.type}</Text>
           </View>
         </Card>
       )}

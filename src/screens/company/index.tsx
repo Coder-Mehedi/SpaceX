@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   summary: {
-    paddingVertical: 30,
+    paddingTop: 30,
+    paddingBottom: 10,
   },
 });
 export default Company;

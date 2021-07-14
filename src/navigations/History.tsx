@@ -6,21 +6,24 @@ import Cores from 'screens/cores';
 import MenuBar from 'components/_root/menu-bar';
 import {Colors} from 'utils/colors';
 import History from 'screens/history';
+import {HistoryProvider} from 'components/_context/historyProvider';
 
 const Stack = createStackNavigator();
 
 const HistoryRoute = ({navigation}: any) => {
   return (
-    <Stack.Navigator screenOptions={navigatorHeaderOptions}>
-      <Stack.Screen
-        name={Screen.History}
-        component={History}
-        options={{
-          headerLeft: () => <MenuBar />,
-          cardStyle: {backgroundColor: Colors.background},
-        }}
-      />
-    </Stack.Navigator>
+    <HistoryProvider>
+      <Stack.Navigator screenOptions={navigatorHeaderOptions}>
+        <Stack.Screen
+          name={Screen.History}
+          component={History}
+          options={{
+            headerLeft: () => <MenuBar />,
+            cardStyle: {backgroundColor: Colors.background},
+          }}
+        />
+      </Stack.Navigator>
+    </HistoryProvider>
   );
 };
 

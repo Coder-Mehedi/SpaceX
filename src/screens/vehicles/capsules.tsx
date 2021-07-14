@@ -33,7 +33,7 @@ const Capsules = () => {
               <ListItem label="Missions" value={capsule.missions.length} />
               <ListItem
                 label="Original Launch"
-                value={formatDate(capsule?.original_launch, true)}
+                value={formatDate(capsule?.original_launch, {dateOnly: true})}
               />
             </View>
           </Card>

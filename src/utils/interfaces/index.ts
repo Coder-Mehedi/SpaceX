@@ -126,3 +126,15 @@ export interface ICompany {
     state: string;
   };
 }
+
+export interface IHistory {
+  id: string;
+  title: string;
+  details: string;
+  event_date_utc: string;
+  links: {
+    article: string;
+    reddit: string;
+    wikipedia: string;
+  };
+}

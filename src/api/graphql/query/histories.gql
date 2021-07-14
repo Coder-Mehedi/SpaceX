@@ -1,5 +1,5 @@
-query histories {
-  histories {
+query histories($sort: String) {
+  histories(sort: $sort) {
     id
     title
     details
