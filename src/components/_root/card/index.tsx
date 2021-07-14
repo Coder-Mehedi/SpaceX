@@ -1,11 +1,5 @@
 import React, {ReactChild} from 'react';
-import {
-  ImageBackground,
-  StyleProp,
-  StyleSheet,
-  View,
-  ViewStyle,
-} from 'react-native';
+import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 import {Colors} from 'utils/colors';
 interface CardProps {
   children: ReactChild;

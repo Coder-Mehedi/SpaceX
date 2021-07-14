@@ -1,6 +1,5 @@
-import React, {ReactNode, useState} from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-import {View, useWindowDimensions} from 'react-native';
+import React, {useState} from 'react';
+import {useWindowDimensions} from 'react-native';
 import {
   TabView as NativeTabView,
   SceneMap,
