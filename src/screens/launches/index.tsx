@@ -1,13 +1,20 @@
-import {useQuery} from '@apollo/client';
 import React from 'react';
-import {Text} from 'react-native';
-import launchesUpcoming from 'api/graphql/query/launchesUpcoming.gql';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import TabView from 'components/_root/tab-view';
+import UpcomingLaunches from 'screens/launches/upcoming-launches';
+import CompletedLaunches from 'screens/launches/completed-launches';
 
 const Launches = () => {
-  const {data} = useQuery(launchesUpcoming);
-  if (data) console.log(data);
-  return <Text>Launches</Text>;
+  const routes = [
+    {key: 'first', title: 'Upcoming', icon: 'clock'},
+    {key: 'second', title: 'Completed', icon: 'check-circle'},
+  ];
+
+  const renderScene = {
+    first: UpcomingLaunches,
+    second: CompletedLaunches,
+  };
+
+  return <TabView routes={routes} renderScene={renderScene} />;
 };
 
 export default Launches;

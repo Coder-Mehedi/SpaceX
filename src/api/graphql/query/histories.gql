@@ -1,0 +1,13 @@
+query histories($sort: String) {
+  histories(sort: $sort) {
+    id
+    title
+    details
+    event_date_utc
+    links {
+      article
+      reddit
+      wikipedia
+    }
+  }
+}
