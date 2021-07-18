@@ -26,7 +26,7 @@ const Company = () => {
   return (
     <ScrollView>
       <Image
-        source={require('image/spacex-logo-transparent.png')}
+        source={require('assets/images/spacex-logo-transparent.png')}
         resizeMode="cover"
         style={{width: '100%', height: 100}}
       />

@@ -1,12 +1,13 @@
+import Text from 'components/_root/text';
 import React, {ReactNode} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {Colors} from 'utils/colors';
 
 const ListItem = ({label, value}: {label: string; value: string | number}) => {
   return (
     <View style={styles.listContainer}>
-      <Text style={styles.text}>{label}</Text>
-      <Text style={styles.text}>{value}</Text>
+      <Text>{label}</Text>
+      <Text>{value}</Text>
     </View>
   );
 };
@@ -21,10 +22,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 7,
   },
-  text: {
-    color: Colors.primaryText,
-    fontSize: 16,
-  },
+
   sectionTitle: {
     color: Colors.primaryText,
     fontSize: 30,

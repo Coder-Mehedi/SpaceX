@@ -6,6 +6,7 @@ import {
   TextStyle,
 } from 'react-native';
 import {Colors} from 'utils/colors';
+import {Fonts} from 'utils/fonts';
 
 interface TextProps {
   children: ReactNode;
@@ -39,10 +40,12 @@ const styles = StyleSheet.create({
     color: Colors.primaryText,
     fontSize: 16,
     lineHeight: 24,
+    fontFamily: Fonts.UbuntuRegular,
   },
   primary: {
     color: Colors.primaryText,
     fontSize: 30,
+    fontFamily: Fonts.UbuntuBold,
   },
   secondary: {
     color: Colors.secondaryText,

@@ -1,8 +1,9 @@
 import ListItem from 'components/list-item';
 import {useRocket} from 'components/_context/rocketContext';
 import ProgressBar from 'components/_root/progress-bar';
+import Text from 'components/_root/text';
 import React, {useEffect} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {Colors} from 'utils/colors';
 import {setRocketImage} from 'utils/setRocketImage';
 
@@ -30,7 +31,7 @@ const RocketDetails = ({route}: any) => {
         style={styles.rocketImage}
         source={setRocketImage(rocket?.name as string)}
       />
-      <Text style={styles.name}>{rocket?.name}</Text>
+      <Text.Primary style={styles.name}>{rocket?.name}</Text.Primary>
       <Text style={styles.description}>{rocket?.description}</Text>
       {Object.keys(resultToShow).map(item => (
         <ListItem key={item} label={item} value={resultToShow[item]} />
@@ -54,8 +55,6 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   name: {
-    color: Colors.primaryText,
-    fontSize: 30,
     paddingTop: 15,
   },
 });
